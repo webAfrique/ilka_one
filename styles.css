@@ -1,0 +1,71 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    background-image: url('images/beautiful\ roses.avif');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.app-container {
+    width: 1250px;
+    height: 650px;
+    margin: 5% auto;
+    display: flex;
+    /* outline: 2px solid red; */
+}
+.app-container > div {
+    width: 50%;
+    height: 100%;
+}
+.hero {
+    padding: 10% 5%;
+    color: #1E1D56;
+}
+.hero h1 {
+    font-size: 2.5rem;
+    text-align: center;
+}
+.hero p {
+    text-align: center;
+    margin: 20px 0;
+}
+.hero .cta {
+    width: fit-content;
+    margin: 20px auto;
+}
+.cta button:first-child {
+    background-color: #3c2bc7;
+    color: white;
+}
+.hero button, .hero input {
+    background-color: white;
+    padding: 10px 20px;
+    font-family: 'Roboto', sans-serif;
+    color: #1E1D56;
+    border: 2px solid #1E1D56;
+}
+.cta button:hover, input[type='submit']:hover {
+    background-color: #a4b6f5;
+    color: white;
+}
+.hero .search-form {
+    width: fit-content;
+    margin: 10px auto;
+}
+::placeholder {
+    text-align: center;
+    color: #1E1D56;
+}
+.search-form input[type='text'] {
+    width: 350px;
+}
+.output {
+    /* background-image: url('images/beautiful\ roses.avif'); */
+    background-size: cover;
+}
