@@ -2,6 +2,7 @@
 
 const { resolve } = require('path')
 const flowers = require('./Nyode_Emmanuel_flowers.json')
+const fs = require('node:fs/promises');
 
 function getAll() {
     return flowers
@@ -25,16 +26,43 @@ function getByKeyName( { key, value } ) {
             reject('The requested resource is unavailable')
         }
         else{
+            //console.log(flower)
             resolve(flower)
         }
     })
 }
 
-function insertOne(flower) {
-    return new Promise((resolve, reject) => {
-        flowers.push(flower)
-        resolve('new flower created')
-    })
+async function insertOne(newFlower) {
+    flowers.push(newFlower);
+    try {
+      await fs.writeFile('./Nyode_Emmanuel_flowers.json', JSON.stringify(flowers),);
+      return 'The flower has been added successfully';
+    } catch (err) {
+        console.log(err);
+        return 'An error occurred while trying to add the flower';
+    }
+}
+
+
+async function updateOne(details) {
+    const targetIndex = flowers.findIndex(flower => flowerId == details.flowerId)
+    
+    try {
+        if(targetIndex == -1){
+            throw new Error(`The flower ${details.name} was not found`)
+        }
+        const targetFlower = flowers[targetIndex]
+        /* for(const key in details){
+            if(key === '') continue
+            targetFlower[key] = details[key]
+        } */
+        const updatedFlower = {...targetFlower, ...details}
+        flowers.splice(targetIndex, 1, updatedFlower)
+        await fs.writeFile('./Nyode_Emmanuel_flowers.json', JSON.stringify(flowers))
+        return `The flower ${targetFlower.name} was updated successfully`
+    } catch (error) {
+        return error.message
+    }
 }
 
 function deleteOne(id) {
@@ -45,4 +73,4 @@ function deleteOne(id) {
    })
 }
 
-module.exports = { getAll, getOneById, insertOne, getByKeyName, deleteOne  }
+module.exports = { getAll, getOneById, insertOne, getByKeyName, updateOne, deleteOne  }

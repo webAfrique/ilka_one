@@ -2,16 +2,16 @@
 
 const flowersTable = document.querySelector('tbody')
 async function getAll() {
-    const response = await fetch('http://localhost:5000/data/flowers')
+    const response = await fetch('http://localhost:5000/data/all')
     const data = await response.json()
-    data.forEach(element => {
+    data.forEach(item => {
         const flower = `
         <tr>
-        <td>${element.flowerId}</td>
-        <td>${element.name}</td>
-        <td>${element.stock}</td>
-        <td>${element.unitPrice}</td>
-        <td>${element.site}</td>
+        <td>${item.flowerId}</td>
+        <td>${item.name}</td>
+        <td>${item.stock}</td>
+        <td>${item.unitPrice}</td>
+        <td>${item.site}</td>
         </tr>
     `
         flowersTable.innerHTML += flower
