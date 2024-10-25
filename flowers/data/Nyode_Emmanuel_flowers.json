@@ -1,0 +1,71 @@
+[
+  {
+    "flowerId": 4,
+    "name": "mushroom",
+    "stock": 20,
+    "unitPrice": 9,
+    "site": "bucket"
+  },
+  {
+    "flowerId": 7,
+    "name": "marigold",
+    "stock": 13,
+    "unitPrice": 8,
+    "site": "rocky"
+  },
+  {
+    "flowerId": 6,
+    "name": "toadstool",
+    "stock": 10,
+    "unitPrice": 6,
+    "site": "shady"
+  },
+  {
+    "flowerId": 5,
+    "name": "tulip",
+    "stock": 25,
+    "unitPrice": 7,
+    "site": "half shadow"
+  },
+  {
+    "flowerId": 2,
+    "name": "rose",
+    "stock": 5,
+    "unitPrice": 10,
+    "site": "garage"
+  },
+  {
+    "flowerId": 3,
+    "name": "violet",
+    "stock": 100,
+    "unitPrice": 4,
+    "site": "swamp"
+  },
+  {
+    "flowerId": 1,
+    "name": "lily-of-the-valley",
+    "stock": 1,
+    "unitPrice": 3,
+    "site": "sunny"
+  },
+  {
+    "flowerId": 99,
+    "name": "xyz",
+    "stock": 10,
+    "unitPrice": 10,
+    "site": "test.com"
+  },
+  {
+    "flowerId": 100,
+    "name": "abc",
+    "stock": 100,
+    "unitPrice": 2.5,
+    "site": "anothertest.gov.fi"
+  },
+  {
+    "name": "Emmanuel Monle Nyode",
+    "stock": "3",
+    "unitPrice": "5",
+    "site": "jguygug"
+  }
+]

@@ -4,11 +4,11 @@ const updateForm = document.querySelector('#update-flower')
 const updateButton = document.querySelector('#update-flower-btn')
 const statusMessage = document.querySelector('#status-msg')
 
-function updateFlower(event) {
-    event.preventDefault()
+function updateFlower() {
+    console.log('updateFlower()')
     const formData = new FormData(updateForm)
     const newFlower = Object.fromEntries(formData)
-    console.log(newFlower)
+    newFlower.dummy = 'dummy'
     if(newFlower.flowerId == ''){
         statusMessage.textContent = 'Please enter the flowerId'
         return
@@ -23,4 +23,5 @@ function updateFlower(event) {
     .catch(error => alert(error))
 }
 
-updateButton.addEventListener('submit', updateFlower)
+updateButton.addEventListener('click', updateFlower)
+//updateForm.addEventListener('submit', updateFlower)

@@ -22,6 +22,9 @@ const fileTypes = {
 
 
 const server = http.createServer((req, res) => {
+    const reqUrlObj = new URL(`http://${host}:${port}${req.url}`)
+    const fullpath = reqUrlObj.href
+    console.log(fullpath)
     if(req.method === 'GET'){
         if(req.url === '/'){
             res.writeHead(200, {
@@ -78,7 +81,8 @@ const server = http.createServer((req, res) => {
         }
         
     }
-    else if(req.method === 'POST'){
+    else if(req.method === 'PUT'){
+        //console.log('request receive by PUT listener')
         const body = [];
         req.on("data", chunk => {
             body.push(chunk);

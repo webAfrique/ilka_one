@@ -8,6 +8,8 @@ function addFlower() {
     //event.preventDefault()
     const formData = new FormData(inputForm)
     const newFlower = Object.fromEntries(formData)
+    newFlower.dummy = 'dummy'
+    console.log(newFlower)
     fetch('http://localhost:5000/flowers/new', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
@@ -19,4 +21,4 @@ function addFlower() {
 }
 
 //inputForm.addEventListener('submit', addFlower)
-submitButton.addEventListener('submit', addFlower)
+submitButton.addEventListener('click', addFlower)
